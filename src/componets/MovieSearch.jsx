@@ -6,7 +6,7 @@ import { fetchUser } from '../features/user/thunk';
 const MovieSearch = () => {
     const [query, setQuery] = useState('');
     const dispatch = useDispatch()
-    const {user} = useSelector(state => state.user)
+    const {user , loading} = useSelector(state => state.user)
 
     const handleChange = (e)=>{
         const newQuery = e.target.value.toLowerCase();
@@ -29,6 +29,8 @@ const MovieSearch = () => {
 
         <div className="row gap-5">
           <h1 className="my-3">Movies</h1>
+           {loading && <h3 className="text-white">Loading movies...</h3>}
+           {user.length === 0  && (<h5 className="text-white">No movies found.</h5>)}
           {user.map((movie, idx) => (
             <div className="card px-0 mb-3" style={{ width: '18rem' }} key={idx}>
               <img
