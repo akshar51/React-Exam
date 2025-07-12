@@ -19,9 +19,6 @@ const Navbar = () => {
           <Link className="nav-link text-white" to="/search">Movie Search</Link>
         </li>
         <li className="nav-item">
-          <a className="nav-link text-white" href="#">Profile</a>
-        </li>
-        <li className="nav-item">
           <Link className="nav-link text-white" to="/">Logout</Link>
         </li>
       </ul>
